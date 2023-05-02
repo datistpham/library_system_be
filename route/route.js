@@ -46,7 +46,8 @@ const update_password = require("../controller/update_password")
 const get_list_record = require("../controller/get_list_record")
 const get_notification = require("../controller/staff/get_notification")
 const read_notification_order = require("../controller/read_notification_order")
-
+const get_detail_blog = require("../controller/get_detail_blog")
+const edit_detail_blog = require("../controller/edit_detail_blog")
 const router= express.Router()
 
 router.post("/api/signup", signup.signUp)
@@ -123,5 +124,7 @@ router.post("/api/v1/update-password", verifyToken, update_password)
 router.get("/api/v3/records", get_list_record)
 router.get("/api/v2/notification", get_notification)
 router.post("/api/v2/read/notification", read_notification_order)
+router.get("/api/v3/blog/detail", get_detail_blog)
+router.patch("/api/v3/blog/detail", edit_detail_blog)
 
 module.exports= router
